@@ -133,5 +133,211 @@ table {
 html,
 body {
   height: 100%;
-  background-color: red;
+  font-size: 62.5%;
+  width: 800px;
+  margin: 0 auto;
+}
+.navigation-mixin {
+  color: #dd3356;
+  padding-left: 20px;
+  text-decoration: none;
+}
+.navigation-mixin:hover {
+  text-decoration: underline;
+}
+.bordered {
+  border-top: 1px solid #ed7a2d;
+  border-bottom: 1px solid #ed7a2d;
+  color: #dd3356;
+}
+.navigation header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+.navigation header nav a {
+  font-size: 1.6rem;
+  color: #110e16;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  color: #dd3356;
+  padding-left: 20px;
+  text-decoration: none;
+}
+.navigation header nav a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 500px) {
+  .navigation header nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .navigation header nav a {
+    padding: 20px 100px;
+    border: 1px solid #f2f2f2;
+  }
+}
+@media (max-width: 500px) {
+  .navigation header {
+    width: 100%;
+  }
+}
+.overview {
+  background-color: #1F1B28;
+  padding: 30px;
+  margin: 20px 0;
+  border-top: 1px solid #ed7a2d;
+  border-bottom: 1px solid #ed7a2d;
+  color: #dd3356;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.overview .profile {
+  width: 200px;
+  height: auto;
+}
+@media (max-width: 500px) {
+  .overview {
+    width: 60%;
+  }
+}
+.overview h1 {
+  font-size: 4rem;
+  padding: 40px 0 20px 0;
+  font-family: 'Exo', sans-serif;
+}
+.overview p {
+  color: #f2f2f2;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  padding-bottom: 40px;
+}
+.overview button {
+  background-color: #dd3356;
+  padding: 20px 0px;
+  width: 27%;
+  font-size: 1.6rem;
+  color: #f2f2f2;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+}
+.overview button:hover {
+  background-color: #ed7a2d;
+  color: white;
+  cursor: pointer;
+}
+.personal-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.personal-profile h2 {
+  color: #dd3356;
+  font-size: 2rem;
+  font-family: 'Exo', sans-serif;
+  padding: 20px 0;
+}
+.personal-profile p {
+  color: #110e16;
+  line-height: 1.5;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .personal-profile p {
+    width: 50%;
+  }
+}
+.personal-profile .introduction {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .personal-profile .introduction {
+    margin: 0 10px;
+    width: 100%;
+  }
+}
+.personal-profile .skills {
+  width: 100%;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.personal-profile .skills p {
+  border: 1px solid #f2f2f2;
+  padding: 10px;
+}
+@media (max-width: 500px) {
+  .personal-profile .skills {
+    padding-left: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .personal-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+.experience {
+  padding: 20px 0;
+}
+.experience h2 {
+  font-size: 2rem;
+  font-family: 'Exo', sans-serif;
+  color: #dd3356;
+  padding-bottom: 30px;
+}
+.experience table {
+  justify-content: center;
+  width: 100%;
+  text-align: left;
+}
+.experience table tr {
+  border-top: 1px solid #f2f2f2;
+  font-size: 1.6rem;
+  padding: 10px;
+}
+.experience table tr th {
+  padding: 20px 0;
+  font-weight: 700;
+  font-family: 'Exo', sans-serif;
+  color: #110e16;
+}
+.experience table tr td {
+  padding: 20px 0;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  color: #110e16;
+}
+@media (max-width: 500px) {
+  .experience {
+    margin: 0 10px;
+  }
+}
+.contact h2 {
+  color: #dd3356;
+  font-size: 2rem;
+  font-family: 'Exo', sans-serif;
+  padding: 20px 0;
+}
+.contact a {
+  font-size: 1.6rem;
+  color: #dd3356;
+  padding-bottom: 10px;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+}
+.contact p {
+  font-size: 1.6rem;
+  color: #110e16;
+  padding: 10px 0;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+}
+footer p {
+  padding: 40px 0;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  color: #1F1B28;
+  text-align: center;
 }

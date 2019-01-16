@@ -55,7 +55,252 @@ table {
 
 html, body {
 		height: 100%;
-		background-color: red;
+		font-size: @magic-percentage;
+		width: 800px;
+		margin: 0 auto;
 }
 
+//----VARIABLES
 
+@magic-percentage: 62.5%;
+@padding30: 30px;
+@padding-top-bottom: 20px 0;
+
+//font stacks
+@font-stack-cabin:'Cabin', Helvetica, Arial, sans-serif; 
+@font-stack-exo:'Exo', sans-serif;
+
+//color swatches
+@dark-purple: #110e16;
+@fucsia: #dd3356;
+@light-purple: #1F1B28;
+@dirtygrey: #f2f2f2;
+@bright-orange:#ed7a2d;
+
+//----MIXINS 
+
+.flex-mixin(@direction, @justify-content) {
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @justify-content;
+}
+
+.button-mixin() {
+	background-color: @fucsia;
+	&:hover {
+		background-color: @bright-orange;
+		color: white;
+		cursor: pointer;
+	}
+}
+
+.h2-mixin() {
+		font-size: 2rem;
+		font-family: @font-stack-exo;
+		.make-fucsia();
+}
+
+.navigation-mixin {
+	.make-fucsia();
+	padding-left: 20px;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.bordered {
+	border-top: 1px solid @bright-orange;
+	border-bottom: 1px solid @bright-orange;
+	.make-fucsia();
+}
+
+.make-fucsia() {
+	color: @fucsia;
+}
+
+.flex-row-with-fucsia() {
+	.flex-mixin();
+	.make-fucsia();
+	font-size: 1.6rem;
+}
+
+//----HEADER
+.navigation {
+	header {
+		nav {
+			.flex-mixin(row, flex-end);
+			padding: @padding-top-bottom;
+			a {
+				font-size: 1.6rem;
+				color: @dark-purple;
+				font-family: @font-stack-cabin;
+				.navigation-mixin();
+			}
+			@media (max-width: 500px) {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				a {
+					padding: 20px 100px;
+					border: 1px solid @dirtygrey;
+				}
+			}
+		}
+	@media(max-width: 500px) {
+		width: 100%;
+	}	
+	}
+}
+
+//----OVERVIEW SECTION
+
+.overview {
+	background-color: @light-purple;
+	padding: @padding30;
+	margin: 20px 0;
+	.bordered();
+	.flex-mixin(column, flex-start);
+	.profile {
+		width: 200px;
+		height: auto;
+	}
+	@media(max-width: 500px) {
+		width: 60%;
+	}
+	h1 {
+		font-size: 4rem;
+		padding: 40px 0 20px 0;
+		font-family: @font-stack-exo;
+	}
+	p {
+		color: @dirtygrey;
+		font-family: @font-stack-cabin;
+		font-size: 2rem;
+		padding-bottom: 40px;
+		}
+	button {
+		.button-mixin();
+		padding: 20px 0px;
+		width: 27%;
+		font-size: 1.6rem;
+		color: @dirtygrey;
+		font-family: @font-stack-cabin;
+	}
+}
+
+//----PERSONAL PROFILE SECTION
+
+.personal-profile {
+	.flex-mixin(row, space-between);
+	h2 {
+		color: @fucsia;
+		font-size: 2rem;
+		font-family: @font-stack-exo;
+		padding: @padding-top-bottom;
+	}
+	p {
+		color: @dark-purple;
+		line-height: 1.5;
+		font-family: @font-stack-cabin;
+		font-size: 1.6rem;
+		@media(max-width: 500px) {
+			width: 50%;
+		}
+	}
+	.introduction {
+		width: 100%;
+		@media(max-width: 500px) {
+			margin: 0 10px;
+			width: 100%;
+		}
+	}
+
+	.skills {
+		width: 100%;
+		padding-left: 50px;
+		.flex-mixin(column, space-evenly);
+		p {
+			border: 1px solid @dirtygrey;
+			padding: 10px;
+		}
+		@media(max-width: 500px) {
+			padding-left: 10px;
+		}
+	}
+	@media(max-width: 500px) {
+		.flex-mixin(column, flex-start);
+	}
+}
+
+//----EXPERIENCE SECTION
+
+.experience {
+	padding: @padding-top-bottom;
+	h2{
+		.h2-mixin();
+		padding-bottom: 30px;
+	}
+	table {
+		justify-content: center;
+		width: 100%;
+		text-align: left;
+		
+		
+		tr {
+			border-top: 1px solid @dirtygrey;
+			font-size: 1.6rem;
+			padding: 10px;
+			th{
+				padding: @padding-top-bottom;
+				font-weight: 700;
+				font-family: @font-stack-exo;
+				color: @dark-purple
+			}
+			td {
+				padding: @padding-top-bottom;
+				font-family: @font-stack-cabin;
+				color: @dark-purple;
+			};
+			}
+		}
+		@media(max-width: 500px) {
+			margin: 0 10px;
+		}
+	}
+
+//----CONTACT SECTION
+
+.contact {
+	h2 {
+		color: @fucsia;
+		font-size: 2rem;
+		font-family: @font-stack-exo;
+		padding:@padding-top-bottom;
+	}
+	a {
+		font-size: 1.6rem;
+		color: @fucsia;
+		padding-bottom: 10px;
+		font-family: @font-stack-cabin;
+	}
+	p {
+		font-size: 1.6rem;
+		color: @dark-purple;
+		padding: 10px 0;
+		font-family: @font-stack-cabin;
+
+	}
+}
+
+//----FOOTER
+
+	footer {
+		p {
+			padding: 40px 0;
+			font-family: @font-stack-cabin;
+			font-size: 1.6rem;
+			color: @light-purple;
+			text-align: center;
+		}
+	}
