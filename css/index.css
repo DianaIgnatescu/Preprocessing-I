@@ -143,11 +143,6 @@ body {
 .navigation-mixin:hover {
   text-decoration: underline;
 }
-.bordered {
-  border-top: 1px solid #ed7a2d;
-  border-bottom: 1px solid #ed7a2d;
-  color: #dd3356;
-}
 h1 {
   font-size: 4rem;
   padding: 40px 0 20px 0;
@@ -191,10 +186,11 @@ p {
 }
 @media (max-width: 500px) {
   .container header nav {
+    padding-top: 0;
+    padding-bottom: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-content: stretch;
   }
 }
 .container header nav a {
@@ -210,11 +206,15 @@ p {
 }
 @media (max-width: 500px) {
   .container header nav a {
-    padding: 20px 100px;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
     border: 1px solid #f2f2f2;
+    color: #110e16;
   }
 }
-.overview {
+.container .overview {
   background-color: #1F1B28;
   padding: 30px;
   margin: 20px 0;
@@ -225,11 +225,24 @@ p {
   flex-direction: column;
   justify-content: flex-start;
 }
-.overview .profile {
+@media (max-width: 500px) {
+  .container .overview {
+    padding-top: 0;
+    margin-top: 0;
+    align-items: center;
+  }
+}
+.container .overview .profile {
+  margin-top: 20px;
   width: 200px;
   height: auto;
 }
-.overview button {
+@media (max-width: 420px) {
+  .container .overview h1 {
+    font-size: 2.9rem;
+  }
+}
+.container .overview button {
   background-color: #dd3356;
   font-size: 1.8rem;
   color: #f2f2f2;
@@ -237,109 +250,126 @@ p {
   padding: 15px 0px;
   width: 27%;
 }
-.overview button:hover {
+.container .overview button:hover {
   background-color: #ed7a2d;
   color: white;
   cursor: pointer;
 }
-.personal-profile {
+@media (max-width: 500px) {
+  .container .overview button {
+    width: 50%;
+  }
+}
+.container .personal-profile {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
 }
 @media (max-width: 500px) {
-  .personal-profile {
+  .container .personal-profile {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
 }
-.personal-profile p {
+.container .personal-profile p {
   color: #110e16;
   line-height: 1.5;
 }
-.personal-profile .introduction {
-  width: 50%;
+.container .personal-profile .introduction {
+  width: 100%;
 }
 @media (max-width: 500px) {
-  .personal-profile .introduction {
+  .container .personal-profile .introduction {
     margin: 0 20px 0 20px;
     width: 80%;
   }
 }
-.personal-profile .skills {
+.container .personal-profile .skills {
   display: flex;
   flex-direction: column;
   padding-left: 50px;
+  width: 100%;
 }
-.personal-profile .skills p {
+.container .personal-profile .skills p {
   border-top: 1px solid #f2f2f2;
   padding: 10px 0;
 }
+.container .personal-profile .skills p:last-child {
+  border-bottom: 1px solid #f2f2f2;
+}
 @media (max-width: 500px) {
-  .personal-profile .skills {
+  .container .personal-profile .skills {
     margin: 0 20px 0 20px;
     width: 80%;
     padding-left: 0;
   }
 }
-.experience {
+.container .experience {
   padding: 20px 0;
 }
 @media (max-width: 500px) {
-  .experience {
+  .container .experience {
     margin: 0 20px 0 20px;
     width: 80%;
     padding-left: 0;
   }
 }
-.experience h2 {
+.container .experience h2 {
   font-size: 2rem;
   font-family: 'Exo', sans-serif;
   color: #dd3356;
   padding-bottom: 30px;
 }
-.experience table {
+.container .experience table {
   justify-content: center;
   width: 100%;
   text-align: left;
 }
-.experience table tr {
+@media (max-width: 500px) {
+  .container .experience table {
+    text-align: center;
+  }
+}
+.container .experience table tr {
   border-top: 1px solid #f2f2f2;
   font-size: 1.6rem;
   padding: 10px;
 }
-.experience table tr th {
+.container .experience table tr th {
   padding: 20px 0;
   font-weight: 700;
   font-family: 'Exo', sans-serif;
   color: #110e16;
 }
-.experience table tr td {
+.container .experience table tr td {
   padding: 20px 0;
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   color: #110e16;
 }
+.container .contact {
+  padding: 20px 0;
+}
 @media (max-width: 500px) {
-  .contact {
+  .container .contact {
     margin: 0 20px 0 20px;
     width: 80%;
     padding-left: 0;
   }
 }
-.contact a {
+.container .contact a {
   font-size: 1.6rem;
   color: #dd3356;
   padding-bottom: 10px;
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
 }
-.contact p {
+.container .contact p {
   font-size: 1.6rem;
   color: #110e16;
   padding: 10px 0;
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
 }
-footer p {
+.container footer p {
   padding: 40px 0;
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
