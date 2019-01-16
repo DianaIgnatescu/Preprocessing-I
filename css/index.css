@@ -134,12 +134,10 @@ html,
 body {
   height: 100%;
   font-size: 62.5%;
-  width: 800px;
-  margin: 0 auto;
 }
 .navigation-mixin {
   color: #dd3356;
-  padding-left: 20px;
+  padding-left: 30px;
   text-decoration: none;
 }
 .navigation-mixin:hover {
@@ -150,37 +148,70 @@ body {
   border-bottom: 1px solid #ed7a2d;
   color: #dd3356;
 }
-.navigation header nav {
+h1 {
+  font-size: 4rem;
+  padding: 40px 0 20px 0;
+  font-family: 'Exo', sans-serif;
+}
+h2 {
+  color: #dd3356;
+  font-size: 2rem;
+  font-family: 'Exo', sans-serif;
+  padding: 20px 0;
+}
+p {
+  color: #f2f2f2;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  padding-bottom: 40px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (max-width: 500px) {
+  .container {
+    margin: 0;
+  }
+}
+@media (max-width: 500px) {
+  .container header {
+    width: 100%;
+  }
+}
+.container header nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   padding: 20px 0;
 }
-.navigation header nav a {
+@media (max-width: 500px) {
+  .container header nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.container header nav a {
   font-size: 1.6rem;
   color: #110e16;
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   color: #dd3356;
-  padding-left: 20px;
+  padding-left: 30px;
   text-decoration: none;
 }
-.navigation header nav a:hover {
+.container header nav a:hover {
   text-decoration: underline;
 }
 @media (max-width: 500px) {
-  .navigation header nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .navigation header nav a {
+  .container header nav a {
     padding: 20px 100px;
     border: 1px solid #f2f2f2;
-  }
-}
-@media (max-width: 500px) {
-  .navigation header {
-    width: 100%;
   }
 }
 .overview {
@@ -198,29 +229,13 @@ body {
   width: 200px;
   height: auto;
 }
-@media (max-width: 500px) {
-  .overview {
-    width: 60%;
-  }
-}
-.overview h1 {
-  font-size: 4rem;
-  padding: 40px 0 20px 0;
-  font-family: 'Exo', sans-serif;
-}
-.overview p {
-  color: #f2f2f2;
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
-  font-size: 2rem;
-  padding-bottom: 40px;
-}
 .overview button {
   background-color: #dd3356;
-  padding: 20px 0px;
-  width: 27%;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: #f2f2f2;
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  padding: 15px 0px;
+  width: 27%;
 }
 .overview button:hover {
   background-color: #ed7a2d;
@@ -229,50 +244,8 @@ body {
 }
 .personal-profile {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.personal-profile h2 {
-  color: #dd3356;
-  font-size: 2rem;
-  font-family: 'Exo', sans-serif;
-  padding: 20px 0;
-}
-.personal-profile p {
-  color: #110e16;
-  line-height: 1.5;
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
-}
-@media (max-width: 500px) {
-  .personal-profile p {
-    width: 50%;
-  }
-}
-.personal-profile .introduction {
+  justify-content: space-around;
   width: 100%;
-}
-@media (max-width: 500px) {
-  .personal-profile .introduction {
-    margin: 0 10px;
-    width: 100%;
-  }
-}
-.personal-profile .skills {
-  width: 100%;
-  padding-left: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.personal-profile .skills p {
-  border: 1px solid #f2f2f2;
-  padding: 10px;
-}
-@media (max-width: 500px) {
-  .personal-profile .skills {
-    padding-left: 10px;
-  }
 }
 @media (max-width: 500px) {
   .personal-profile {
@@ -281,8 +254,44 @@ body {
     justify-content: flex-start;
   }
 }
+.personal-profile p {
+  color: #110e16;
+  line-height: 1.5;
+}
+.personal-profile .introduction {
+  width: 50%;
+}
+@media (max-width: 500px) {
+  .personal-profile .introduction {
+    margin: 0 20px 0 20px;
+    width: 80%;
+  }
+}
+.personal-profile .skills {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+}
+.personal-profile .skills p {
+  border-top: 1px solid #f2f2f2;
+  padding: 10px 0;
+}
+@media (max-width: 500px) {
+  .personal-profile .skills {
+    margin: 0 20px 0 20px;
+    width: 80%;
+    padding-left: 0;
+  }
+}
 .experience {
   padding: 20px 0;
+}
+@media (max-width: 500px) {
+  .experience {
+    margin: 0 20px 0 20px;
+    width: 80%;
+    padding-left: 0;
+  }
 }
 .experience h2 {
   font-size: 2rem;
@@ -312,15 +321,11 @@ body {
   color: #110e16;
 }
 @media (max-width: 500px) {
-  .experience {
-    margin: 0 10px;
+  .contact {
+    margin: 0 20px 0 20px;
+    width: 80%;
+    padding-left: 0;
   }
-}
-.contact h2 {
-  color: #dd3356;
-  font-size: 2rem;
-  font-family: 'Exo', sans-serif;
-  padding: 20px 0;
 }
 .contact a {
   font-size: 1.6rem;
