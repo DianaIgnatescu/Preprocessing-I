@@ -1,1 +1,378 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+}
+.navigation-mixin {
+  color: #dd3356;
+  padding-left: 30px;
+  text-decoration: none;
+}
+.navigation-mixin:hover {
+  text-decoration: underline;
+}
+h1 {
+  font-size: 4rem;
+  padding: 40px 0 20px 0;
+  font-family: 'Exo', sans-serif;
+}
+h2 {
+  color: #dd3356;
+  font-size: 2rem;
+  font-family: 'Exo', sans-serif;
+  padding: 20px 0;
+}
+p {
+  color: #f2f2f2;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  padding-bottom: 40px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (max-width: 500px) {
+  .container {
+    margin: 0;
+  }
+}
+@media (max-width: 500px) {
+  .container header {
+    width: 100%;
+  }
+}
+.container header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+@media (max-width: 500px) {
+  .container header nav {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+  }
+}
+.container header nav a {
+  font-size: 1.6rem;
+  color: #110e16;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  color: #dd3356;
+  padding-left: 30px;
+  text-decoration: none;
+}
+.container header nav a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 500px) {
+  .container header nav a {
+    align-self: center;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    border: 1px solid #f2f2f2;
+    color: #110e16;
+  }
+}
+.container .overview {
+  background-color: #1F1B28;
+  padding: 30px;
+  margin: 20px 0;
+  border-top: 1px solid #ed7a2d;
+  border-bottom: 1px solid #ed7a2d;
+  color: #dd3356;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+@media (max-width: 500px) {
+  .container .overview {
+    padding-top: 0;
+    margin-top: 0;
+    align-items: center;
+  }
+}
+.container .overview .profile {
+  margin-top: 20px;
+  width: 200px;
+  height: auto;
+}
+@media (max-width: 420px) {
+  .container .overview h1 {
+    font-size: 2.9rem;
+  }
+}
+.container .overview button {
+  background-color: #dd3356;
+  font-size: 1.8rem;
+  color: #f2f2f2;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  padding: 15px 0px;
+  width: 27%;
+}
+.container .overview button:hover {
+  background-color: #ed7a2d;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  .container .overview button {
+    width: 50%;
+  }
+}
+.container .personal-profile {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .container .personal-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+.container .personal-profile p {
+  color: #110e16;
+  line-height: 1.5;
+}
+.container .personal-profile .introduction {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .container .personal-profile .introduction {
+    margin: 0 20px 0 20px;
+    width: 80%;
+  }
+}
+.container .personal-profile .skills {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  width: 100%;
+}
+.container .personal-profile .skills p {
+  border-top: 1px solid #f2f2f2;
+  padding: 10px 0;
+}
+.container .personal-profile .skills p:last-child {
+  border-bottom: 1px solid #f2f2f2;
+}
+@media (max-width: 500px) {
+  .container .personal-profile .skills {
+    margin: 0 20px 0 20px;
+    width: 80%;
+    padding-left: 0;
+  }
+}
+.container .experience {
+  padding: 20px 0;
+}
+@media (max-width: 500px) {
+  .container .experience {
+    margin: 0 20px 0 20px;
+    width: 80%;
+    padding-left: 0;
+  }
+}
+.container .experience h2 {
+  font-size: 2rem;
+  font-family: 'Exo', sans-serif;
+  color: #dd3356;
+  padding-bottom: 30px;
+}
+.container .experience table {
+  justify-content: center;
+  width: 100%;
+  text-align: left;
+}
+@media (max-width: 500px) {
+  .container .experience table {
+    text-align: center;
+  }
+}
+.container .experience table tr {
+  border-top: 1px solid #f2f2f2;
+  font-size: 1.6rem;
+  padding: 10px;
+}
+.container .experience table tr th {
+  padding: 20px 0;
+  font-weight: 700;
+  font-family: 'Exo', sans-serif;
+  color: #110e16;
+}
+.container .experience table tr td {
+  padding: 20px 0;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  color: #110e16;
+}
+.container .contact {
+  padding: 20px 0;
+}
+@media (max-width: 500px) {
+  .container .contact {
+    margin: 0 20px 0 20px;
+    width: 80%;
+    padding-left: 0;
+  }
+}
+.container .contact a {
+  font-size: 1.6rem;
+  color: #dd3356;
+  padding-bottom: 10px;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+}
+.container .contact p {
+  font-size: 1.6rem;
+  color: #110e16;
+  padding: 10px 0;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+}
+.container footer p {
+  padding: 40px 0;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  color: #1F1B28;
+  text-align: center;
+}
